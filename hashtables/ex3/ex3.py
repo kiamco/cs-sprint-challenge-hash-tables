@@ -2,9 +2,28 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # flatten arrays into one array
+    flat_array = []
+    hash_counter = {}
+    arrays_count = len(arrays) 
 
-    return result
+    # flatten array
+    for i in arrays:
+        flat_array += i
+        
+    # count elements by elements
+    for num in flat_array: 
+        if num in hash_counter:
+            hash_counter[num] += 1
+        else:
+            hash_counter[num] = 1
+    
+    # Your code here
+    
+    #return if arrays_count is that same as the element counter
+    results = [x for x in hash_counter if hash_counter[x] == arrays_count ]
+
+    return results
 
 
 if __name__ == "__main__":
